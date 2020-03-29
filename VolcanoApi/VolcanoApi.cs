@@ -20,7 +20,7 @@ namespace VolcanoApi
             this.volcanoDbContext = volcanoDbContext;
         }
 
-        [FunctionName("VolcanoApi")]
+        [FunctionName("Volcano")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
