@@ -1,0 +1,22 @@
+<mat-toolbar color="primary" role="banner">
+  <span class="fill-remaining-space">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item routerLink='/home'>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item routerLink='/about'>
+        <mat-icon>local_library</mat-icon>
+        <span>About</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space">Volcano Portal</span>
+</mat-toolbar>
