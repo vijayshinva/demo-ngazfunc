@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,6 +17,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AboutComponent } from './about/about.component';
 import { MatMenuModule} from '@angular/material/menu';
 import { FooterComponent } from './footer/footer.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { VolcanoTableComponent } from './volcano-table/volcano-table.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,8 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     ErrorComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    VolcanoTableComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,11 @@ import { FooterComponent } from './footer/footer.component';
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
