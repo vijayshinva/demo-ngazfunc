@@ -28,13 +28,12 @@ namespace VolcanoApi
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
-            log.LogInformation("C# HTTP trigger function processed a request.");
-            var resultsPerPage = 10;
-            var currentPage = 0;
-            int.TryParse(req.Query["ResultsPerPage"], out resultsPerPage);
-            int.TryParse(req.Query["CurrentPage"], out currentPage);
+            int.TryParse(req.Query["pageSize"], out int pageSize);
+            int.TryParse(req.Query["pageIndex"], out int pageIndex);
+            pageSize = pageSize == 0 ? 10 : pageSize;
 
-            var volcanoes = await volcanoDbContext.Volcanoes.Skip(currentPage * resultsPerPage).Take(resultsPerPage).ToListAsync();
+            log.LogInformation($"Volcanofunction processed a request. {pageSize} {pageIndex}");
+            var volcanoes = await volcanoDbContext.Volcanoes.Skip(pageIndex * pageSize).Take(pageSize).ToListAsync();
             return new OkObjectResult(volcanoes);
         }
     }

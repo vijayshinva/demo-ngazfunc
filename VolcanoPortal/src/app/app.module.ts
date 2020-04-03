@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { VolcanoTableComponent } from './volcano-table/volcano-table.component';
+import { VolcanoComponent } from './volcano/volcano.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VolcanoTableComponent } from './volcano-table/volcano-table.component';
     ErrorComponent,
     AboutComponent,
     FooterComponent,
-    VolcanoTableComponent
+    VolcanoTableComponent,
+    VolcanoComponent
   ],
   imports: [
     BrowserModule,

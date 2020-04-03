@@ -13,8 +13,13 @@ export class VolcanoService {
 
   constructor(private http: HttpClient) { }
 
-  getVolcanoes(): Observable<Volcano[]> {
-    return this.http.get<Volcano[]>(this.volcanoApiUrl)
+  getVolcanoes(pageSize: number = 10, pageIndex: number = 0): Observable<Volcano[]> {
+    return this.http.get<Volcano[]>(this.volcanoApiUrl,
+      {
+        params: { 'pageSize': pageSize.toString(), 'pageIndex': pageIndex.toString() },
+        headers: {}
+      }
+    )
       .pipe(
         catchError(this.handleError<Volcano[]>('getVolcanoes', []))
       );
