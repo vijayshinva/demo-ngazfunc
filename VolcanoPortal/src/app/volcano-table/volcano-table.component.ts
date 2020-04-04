@@ -26,7 +26,6 @@ export class VolcanoTableComponent implements AfterViewInit, OnInit {
 
   ngOnInit() {
     this.dataSource = new VolcanoTableDataSource(this.volcanoService);
-    console.warn('ngOnInit');
     this.dataSource.loadData();
   }
 

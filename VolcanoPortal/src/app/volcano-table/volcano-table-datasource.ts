@@ -54,7 +54,6 @@ export class VolcanoTableDataSource extends DataSource<Volcano> {
    * this would be replaced by requesting the appropriate data from the server.
    */
   private getPagedData(data: Volcano[]) {
-    console.warn('getPagedData');
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     this.volcanoService.getVolcanoes(this.paginator.pageSize, this.paginator.pageIndex)
       .subscribe(volcanoes => this.data = volcanoes);
